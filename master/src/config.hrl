@@ -14,7 +14,7 @@
 
 % Default setting for the maximum number of failures
 % allowed per task
--define(TASK_MAX_FAILURES, 100).
+-define(TASK_MAX_FAILURES, 3).
 
 % A failed task is paused for
 % min(C * FAILED_MIN_PAUSE, FAILED_MAX_PAUSE) +
