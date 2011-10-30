@@ -1,0 +1,3 @@
+usr/local/lib/python*    usr/lib
+usr/local/bin/disco      usr/bin
+usr/local/bin/ddfs       usr/bin
