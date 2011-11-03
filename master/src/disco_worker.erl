@@ -110,7 +110,7 @@ handle_cast(start, #state{task = Task, master = Master} = State) ->
 handle_cast(work, #state{task = Task, port = none} = State) ->
     JobHome = jobhome(Task#task.jobname),
     Worker = filename:join(JobHome, binary_to_list(Task#task.worker)),
-    Command = "nice -n 0 " ++ Worker,
+    Command = "nice -n 19 " ++ Worker,
     JobEnvs = [{S, false} || S <- disco:settings()] ++ Task#task.jobenvs,
     Options = [{cd, JobHome},
                stream,
