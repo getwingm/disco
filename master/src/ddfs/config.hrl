@@ -42,7 +42,7 @@
 
 % Tag cache expires in TAG_EXPIRES milliseconds.
 % Note that must be TAG_EXPIRES < GC_INTERVAL, otherwise tags never expire
--define(TAG_EXPIRES, 55 * ?MINUTE).
+-define(TAG_EXPIRES, 10 * ?HOUR).
 
 % Interval for refreshing the list of all available tags
 % (This is only needed to purge non-existent tags eventually from the tag
@@ -58,7 +58,7 @@
 -define(DELAYED_FLUSH_INTERVAL, 1 * ?SECOND).
 
 % Time to wait between garbage collection runs
--define(GC_INTERVAL, ?HOUR).
+-define(GC_INTERVAL, ?DAY).
 
 % Tag cache expires in this many milliseconds if tag can't be fetched
 -define(TAG_EXPIRES_ONERROR, 1 * ?SECOND).
@@ -95,10 +95,10 @@
 -define(PARTIAL_EXPIRES, ?DAY).
 
 % When orphaned blob can be deleted 
--define(ORPHANED_BLOB_EXPIRES, 1 * ?HOUR).
+-define(ORPHANED_BLOB_EXPIRES, 5 * ?DAY).
 
 % When orphaned tag can be deleted 
--define(ORPHANED_TAG_EXPIRES, 1 * ?HOUR).
+-define(ORPHANED_TAG_EXPIRES, 5 * ?DAY).
 
 % How long a tag has to stay on the deleted list before
 % we can permanently forget it, after all known instances

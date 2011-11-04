@@ -4,7 +4,7 @@
 
 -export([start_link/1]).
 
--define(GC_INTERVAL, 600).
+-define(GC_INTERVAL, 600000).
 
 -spec start_link(pid()) -> no_return().
 start_link(Master) ->
