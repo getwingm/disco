@@ -7,7 +7,7 @@
 
 % Make sure the number is well below the maximum number
 % of file descriptors
--define(MAX_HTTP_CONNECTIONS, 128).
+-define(MAX_HTTP_CONNECTIONS, 2048).
 
 % Default setting for the maximum number of failures
 % allowed per task

@@ -1,1 +1,2 @@
 usr/local/lib/disco/master/ebin    usr/lib/disco/master
+debian/disco-node-limits.conf /etc/security/limits.d
