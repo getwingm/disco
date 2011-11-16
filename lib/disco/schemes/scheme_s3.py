@@ -11,5 +11,5 @@ def input_stream(fd, size, url, params):
     s3 = connect_s3(access_key, secret_key)
     bucket = s3.get_bucket(bucketname, validate=False)
     key = bucket.get_key(keyname)
-    url = key.generate_url(500)
+    url = key.generate_url(24*3600)
     return open_url(url), key.size, url
