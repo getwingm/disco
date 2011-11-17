@@ -1,5 +1,6 @@
 from boto import connect_s3
 from disco.comm import open_url
+from cStringIO import StringIO
 
 
 def input_stream(fd, size, url, params):
@@ -11,5 +12,8 @@ def input_stream(fd, size, url, params):
     s3 = connect_s3(access_key, secret_key)
     bucket = s3.get_bucket(bucketname, validate=False)
     key = bucket.get_key(keyname)
-    url = key.generate_url(24*3600)
-    return open_url(url), key.size, url
+    if key.size:
+        url = key.generate_url(24*3600)
+        return open_url(url), key.size, url
+    else:
+        return StringIO(), 0, url
