@@ -1,0 +1,9 @@
+deb:
+	$(MAKE) debian-clean
+	git checkout pkg/debian/changelog
+	cd pkg && \
+		TS=$$(date +%s) && \
+		VERSION=$$(sed -nre 's/^.*\((.*?)\).*$$/\1/p' debian/changelog |head -n1) && \
+		debchange --newversion $$VERSION-t$$TS$${BUILD_CODE:+~$$BUILD_CODE} 'Automatic build'
+	$(MAKE) debian prefix=/usr RELSRV=/mnt/disco
+	mv *.deb ..
