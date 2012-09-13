@@ -10,7 +10,7 @@ Homepage: http://www.discoproject.org
 
 Package: disco-master
 Architecture: all
-Depends: ${misc:Depends}, disco-node (= ${source:Version}), python-disco (= ${source:Version}), python (>= 2.6)
+Depends: ${misc:Depends}, disco-node (= ${source:Version}), python-disco (= ${source:Version}), python (>= 2.6), varnish
 Description: Disco master
  This is Disco master.
 
