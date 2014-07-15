@@ -7,7 +7,7 @@
 -include("config.hrl").
 -include("ddfs.hrl").
 
--define(PUT_TIMEOUT, 10 * ?MINUTE).
+-define(PUT_TIMEOUT, 60 * ?MINUTE).
 -define(MAX_SAVE_ATTEMPTS, 10).
 
 -type remote_output() :: {label(), data_size(), [data_replica()]}.
