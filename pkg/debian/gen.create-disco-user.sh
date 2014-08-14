@@ -25,6 +25,7 @@ case "\$1" in
         usermod -c "Disco" -d ${RELSRV} -g disco disco
         chown disco:disco -R ${RELSRV}
         su disco --command="""
+            rm /mnt/disco/.ssh/id_dsa > /dev/null 2>&1
             ssh-keygen -N '' -f ${RELSRV}/.ssh/id_dsa
             cat ${RELSRV}/.ssh/id_dsa.pub >> ${RELSRV}/.ssh/authorized_keys
             echo -n \"localhost \" > ${RELSRV}/.ssh/known_hosts
